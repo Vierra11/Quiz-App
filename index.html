@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Quest</title>
+    <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+    <div class="container">
+        <div id="home" class="flex-center flex-column">
+            <h1>Quiz Quest</h1>
+            <label for="category"><h3>Select Category:</h3></label>
+            <select id="category">
+                <option value="9">General Knowledge</option>
+                <option value="18">Science: Computers</option>
+                <option value="21">Sports</option>
+                <option value="23">History</option>
+                <!-- Add more categories as needed -->
+            </select>
+            <a class="btn" id="playBtn" href="#">Play</a>
+            <a class="btn" href="/highscores.html">High Scores</a>
+        </div>
+    </div>
+    <script>
+        const playBtn = document.getElementById('playBtn');
+        const categorySelect = document.getElementById('category');
+
+        playBtn.addEventListener('click', () => {
+            const selectedCategory = categorySelect.value;
+            localStorage.setItem('selectedCategory', selectedCategory);
+            window.location.href = '/game.html';
+        });
+    </script>
+</body>
+</html>
